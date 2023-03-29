@@ -14,10 +14,8 @@ from sklearn.metrics import normalized_mutual_info_score as NMI
 torch.manual_seed(0)  # for reproducibility
 
 # Load data
-dataset = 'Cora'
-path = osp.join(osp.dirname(osp.realpath(__file__)), '../anal', 'data', dataset)
-dataset = Planetoid(path, dataset, transform=T.NormalizeFeatures())
-data = dataset[0]
+train_loader = torch.load( '../export/train_loader.pt')
+test_loader = torch.load( '../export/test_loader.pt')
 
 # Normalized adjacency matrix
 data.edge_index, data.edge_weight = gcn_norm(
