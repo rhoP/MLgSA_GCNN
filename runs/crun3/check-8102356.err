@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/scratch/rohit/Projects/MLgSA_GCNN/crun3/run.py", line 139, in <module>
+    main()
+  File "/scratch/rohit/Projects/MLgSA_GCNN/crun3/run.py", line 100, in main
+    out = model(graph)
+  File "/home/rohit/.conda/envs/pyg/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/scratch/rohit/Projects/MLgSA_GCNN/crun3/run.py", line 57, in forward
+    x = self.mp[0](x, edge_index, edge_weight)
+  File "/home/rohit/.conda/envs/pyg/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/rohit/.conda/envs/pyg/lib/python3.10/site-packages/torch_geometric/nn/conv/ssg_conv.py", line 113, in forward
+    return self.lin(h)
+  File "/home/rohit/.conda/envs/pyg/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/rohit/.conda/envs/pyg/lib/python3.10/site-packages/torch_geometric/nn/dense/linear.py", line 132, in forward
+    return F.linear(x, self.weight, self.bias)
+RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cpu and cuda:0! (when checking argument for argument mat1 in method wrapper_CUDA_addmm)
