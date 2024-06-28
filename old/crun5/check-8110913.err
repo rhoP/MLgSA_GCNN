@@ -1,0 +1,8 @@
+/home/rohit/.conda/envs/pyg/lib/python3.10/site-packages/torch_geometric/utils/scatter.py:93: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(f"The usage of `scatter(reduce='{reduce}')` "
+Traceback (most recent call last):
+  File "/scratch/rohit/Projects/MLgSA_GCNN/crun5/run.py", line 135, in <module>
+    main()
+  File "/scratch/rohit/Projects/MLgSA_GCNN/crun5/run.py", line 116, in main
+    test_accu.append((out.detach().cpu()).argmax(dim=1) == y.argmax())
+RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:0 and cpu!

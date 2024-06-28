@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/scratch/rohit/Projects/MLgSA_GCNN/crun2/run.py", line 125, in <module>
+    main()
+  File "/scratch/rohit/Projects/MLgSA_GCNN/crun2/run.py", line 89, in main
+    out = model(graph)
+  File "/home/rohit/.conda/envs/pyg/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/scratch/rohit/Projects/MLgSA_GCNN/crun2/run.py", line 56, in forward
+    x = self.mp(x, edge_index, edge_weight)
+  File "/home/rohit/.conda/envs/pyg/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/tmp/8060907.tmpdir/rohit_pyg/tmpplj0qvy7.py", line 18, in forward
+    x = self.module_0(x, edge_index, edge_weight)
+  File "/home/rohit/.conda/envs/pyg/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/rohit/.conda/envs/pyg/lib/python3.10/site-packages/torch_geometric/nn/conv/ssg_conv.py", line 94, in forward
+    edge_index, edge_weight = gcn_norm(  # yapf: disable
+  File "/home/rohit/.conda/envs/pyg/lib/python3.10/site-packages/torch_geometric/nn/conv/gcn_conv.py", line 91, in gcn_norm
+    edge_index, edge_weight = add_remaining_self_loops(
+  File "/home/rohit/.conda/envs/pyg/lib/python3.10/site-packages/torch_geometric/utils/loop.py", line 350, in add_remaining_self_loops
+    loop_attr = edge_attr.new_full((N, ) + edge_attr.size()[1:],
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 59.89 GiB (GPU 0; 31.74 GiB total capacity; 8.56 MiB already allocated; 31.30 GiB free; 24.00 MiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF

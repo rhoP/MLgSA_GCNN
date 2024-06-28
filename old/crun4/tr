@@ -1,0 +1,24 @@
+#!/bin/bash
+#SBATCH --account=TUK-DIGIfly
+#SBATCH -J MGIP_SPLIT
+#SBATCH -N 1
+#SBATCH --ntasks-per-node=8
+#SBATCH -o check-%j.out
+#SBATCH -e check-%j.err
+#SBATCH --gres=gpu:V100
+#SBATCH --mem=160000
+#SBATCH --time=200:00:00
+#SBATCH --mail-type=BEGIN
+#SBATCH --mail-type=END
+#SBATCH --mail-type=FAIL
+
+echo "Executing on $HOSTNAME"
+
+
+
+source ~/.bashrc
+
+conda activate pyg
+
+
+python run.py > output.txt
